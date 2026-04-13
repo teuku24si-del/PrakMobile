@@ -47,6 +47,8 @@ class FifthActivity : AppCompatActivity() {
             val intent = Intent(this, WebViewActivity::class.java)
             startActivity(intent)
         }
+
+
     }
 
     // 2. Fungsi untuk menampilkan menu (kaca pembesar & titik tiga) pada Toolbar
@@ -63,11 +65,11 @@ class FifthActivity : AppCompatActivity() {
                 onBackPressedDispatcher.onBackPressed()
                 true
             }
-            R.id.action_search -> {
+            R.id.action_refresh -> {
                 Toast.makeText(this, "Mencari...", Toast.LENGTH_SHORT).show()
                 true
             }
-            R.id.action_settings -> {
+            R.id.action_share -> {
                 Toast.makeText(this, "Membuka Pengaturan", Toast.LENGTH_SHORT).show()
                 true
             }
