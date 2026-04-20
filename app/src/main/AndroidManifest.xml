@@ -14,13 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hasapps">
         <activity
-            android:name=".Pertemuan_5.FifthActivity"
-            android:exported="false"/>
+            android:name=".AuthActivity"
+            android:exported="false" />
 
 
         <activity
-            android:name=".AuthActivity"
-            android:exported="true" >
+            android:name=".Pertemuan_5.FifthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

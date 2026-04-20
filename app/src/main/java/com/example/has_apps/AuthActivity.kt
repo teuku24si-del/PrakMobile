@@ -25,24 +25,39 @@ class AuthActivity : AppCompatActivity() {
         etPassword = findViewById(R.id.etPassword)
         btnLogin = findViewById(R.id.btnLogin)
 
-        btnLogin.setOnClickListener {
-            val username = etUsername.text.toString()
-            val password = etPassword.text.toString()
+        //Kode ini harus selalu dipanggil saat butuh akses "user_pref"
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
-            if (username == password && username.isNotEmpty()) {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
-            } else {
-                AlertDialog.Builder(this)
-                    .setTitle("Login Gagal")
-                    .setMessage("Silahkan coba lagi")
-                    .setPositiveButton("OK") { dialog, _ ->
-                        dialog.dismiss()
-                        etPassword.text.clear()
-                    }
-                    .show()
+
+
+
+            btnLogin.setOnClickListener {
+                val username = etUsername.text.toString()
+                val password = etPassword.text.toString()
+
+
+
+
+
+                if (username == password && username.isNotEmpty()) {
+                    val editor = sharedPref.edit()
+                    editor.putBoolean("isLogin", true)
+                    editor.putString("username", username)
+                    editor.apply()
+
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    AlertDialog.Builder(this)
+                        .setTitle("Login Gagal")
+                        .setMessage("Silahkan coba lagi")
+                        .setPositiveButton("OK") { dialog, _ ->
+                            dialog.dismiss()
+                            etPassword.text.clear()
+                        }
+                        .show()
+                }
             }
         }
     }
-}
