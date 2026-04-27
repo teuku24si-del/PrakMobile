@@ -1,4 +1,4 @@
-package com.example.has_apps.Pertemuan_5
+package com.example.has_apps.Home.Pertemuan_5
 
 import android.content.Intent // Import untuk pindah halaman
 import android.os.Bundle

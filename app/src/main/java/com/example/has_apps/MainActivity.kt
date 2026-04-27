@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.has_apps.Home.petremuan_2.SecondActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +17,10 @@ class MainActivity : AppCompatActivity() {
 
         //Kode ini harus selalu dipanggil saat butuh akses "user_pref"
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+        findViewById<Button>(R.id.btnpetremuan_2).setOnClickListener {
+            startActivity(Intent(this, SecondActivity::class.java))
+        }
 
         btnLogout = findViewById(R.id.btnLogout)
 

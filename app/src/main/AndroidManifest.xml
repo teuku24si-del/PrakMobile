@@ -14,12 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hasapps">
         <activity
+            android:name=".BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.Pertemuan_7.SeventhActivity"
+            android:exported="false" />
+        <activity
             android:name=".AuthActivity"
             android:exported="false" />
-
-
         <activity
-            android:name=".Pertemuan_5.FifthActivity"
+            android:name=".Home.Pertemuan_5.FifthActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"
@@ -31,19 +35,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Pertemuan_5.WebViewActivity"
+            android:name=".Home.Pertemuan_5.WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_3.ThirdResultActivity"
+            android:name=".Home.pertemuan_3.ThirdResultActivity"
             android:exported="false" />
         <activity
-            android:name=".petremuan_2.SecondActivity"
+            android:name=".Home.petremuan_2.SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_3.ThirdActivity"
+            android:name=".Home.pertemuan_3.ThirdActivity"
             android:exported="false" />
         <activity
-            android:name=".Pertemuan_4.FourthActivity"
+            android:name=".Home.Pertemuan_4.FourthActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
