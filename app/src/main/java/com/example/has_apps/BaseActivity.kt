@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.example.has_apps.Home.HomeFragment
 import com.example.has_apps.Message.MessageFragment
 import com.example.has_apps.More.MoreFragment
@@ -13,10 +14,9 @@ import com.example.has_apps.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBaseBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        enableEdgeToEdge()
         binding = ActivityBaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -24,7 +24,9 @@ class BaseActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
-        replaceFragment(HomeFragment())
+
+        replaceFragment(HomeFragment()) //-> jika dipakai, maka awal membuka akan masuk ke home
+
         binding.bottomNavView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> {
@@ -42,8 +44,13 @@ class BaseActivity : AppCompatActivity() {
                 else -> false // return false jika item tidak ada yang di klik
             }
         }
+    }
 
-
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(binding.fragmentContainer.id, fragment)
+            //.addToBackStack(null) -> ini kita nonaktifkan agar saat back langsung keluar aplikasi
+            .commit()
     }
 
 }
