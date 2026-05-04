@@ -9,15 +9,24 @@
 
     <Button
         android:id="@+id/btnLogout"
-        android:layout_width="94dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="122dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
         android:backgroundTint="#ED1010"
         android:text="Logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn7" />
+        app:layout_constraintTop_toBottomOf="@+id/btn9" />
+
+    <View
+        android:id="@+id/background_header"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/bg_header_wave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -35,54 +44,69 @@
 
     <Button
         android:id="@+id/btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_width="384dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="156dp"
         android:text="Pertemuan2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <Button
         android:id="@+id/btn3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="377dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
         android:text="Pertemuan 3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn2" />
 
     <Button
         android:id="@+id/btn4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="393dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="4dp"
         android:text="Pertemuan4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn3" />
 
     <Button
         android:id="@+id/btn5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="403dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
         android:text="Pertemuan5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn4" />
 
     <Button
         android:id="@+id/btn7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_width="405dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
         android:text="Pertemuan7"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn5" />
+
+    <Button
+        android:id="@+id/btn9"
+        android:layout_width="400dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="4dp"
+        android:text="Pertemuan9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn7" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

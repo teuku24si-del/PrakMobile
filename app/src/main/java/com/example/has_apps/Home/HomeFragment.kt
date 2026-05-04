@@ -13,6 +13,7 @@ import com.example.has_apps.AuthActivity
 import com.example.has_apps.Home.Pertemuan_4.FourthActivity
 import com.example.has_apps.Home.Pertemuan_5.FifthActivity
 import com.example.has_apps.Home.Pertemuan_7.SeventhActivity
+import com.example.has_apps.Home.Pertemuan_9.NinthActivity
 import com.example.has_apps.Home.pertemuan_3.ThirdActivity
 import com.example.has_apps.Home.petremuan_2.SecondActivity
 import com.example.has_apps.R
@@ -66,6 +67,11 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireContext(), ThirdActivity::class.java)
             startActivity(intent)
         }
+        binding.btn9.setOnClickListener {
+            val intent = Intent(requireContext(), NinthActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLogout.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Konfirmasi")
