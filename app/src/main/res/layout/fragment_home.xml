@@ -11,13 +11,13 @@
         android:id="@+id/btnLogout"
         android:layout_width="122dp"
         android:layout_height="50dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="#ED1010"
         android:text="Logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn9" />
+        app:layout_constraintTop_toBottomOf="@+id/btn10" />
 
     <View
         android:id="@+id/background_header"
@@ -107,6 +107,17 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn7" />
+
+    <Button
+        android:id="@+id/btn10"
+        android:layout_width="356dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:text="Pertemuan 10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn9" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

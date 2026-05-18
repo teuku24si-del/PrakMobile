@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.has_apps.AuthActivity
+import com.example.has_apps.Home.Pertemuan_10.TenthActivity
 import com.example.has_apps.Home.Pertemuan_4.FourthActivity
 import com.example.has_apps.Home.Pertemuan_5.FifthActivity
 import com.example.has_apps.Home.Pertemuan_7.SeventhActivity
@@ -69,6 +70,11 @@ class HomeFragment : Fragment() {
         }
         binding.btn9.setOnClickListener {
             val intent = Intent(requireContext(), NinthActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btn10.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
             startActivity(intent)
         }
 
