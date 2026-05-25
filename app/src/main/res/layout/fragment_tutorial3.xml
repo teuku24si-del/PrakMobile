@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Message.Tutorial.Tutorial3Fragment">
+
+    <ImageView
+        android:id="@+id/ivTutorialLogo"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="100dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/onep"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTutorialTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Mulai Eksplorasi Sekarang"
+        android:textAlignment="center"
+        android:textColor="#E65100"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivTutorialLogo" />
+
+    <TextView
+        android:id="@+id/tvTutorialDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="24dp" android:text="Semua konfigurasi selesai. Ketuk tombol di bawah untuk masuk ke ruang obrolan dan fitur utama aplikasi."
+        android:textAlignment="center"
+        android:textColor="#5D4037"
+        android:textSize="16sp"
+        android:lineSpacingMultiplier="1.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTutorialTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
