@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.has_apps.AuthActivity
 import com.example.has_apps.Home.Pertemuan_10.TenthActivity
 import com.example.has_apps.Home.Pertemuan_4.FourthActivity
@@ -18,8 +19,10 @@ import com.example.has_apps.Home.Pertemuan_9.NinthActivity
 import com.example.has_apps.Home.pertemuan_3.ThirdActivity
 import com.example.has_apps.Home.petremuan_2.SecondActivity
 import com.example.has_apps.R
+import com.example.has_apps.data.api.CatFactApiClient
 import com.example.has_apps.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.launch
 
 
 class HomeFragment : Fragment() {
@@ -98,9 +101,21 @@ class HomeFragment : Fragment() {
                 }
                 .show()
         }
+        loadCatFact()
     }
 
+    private fun loadCatFact() {
+        lifecycleScope.launch {
+            try {
+                val response = CatFactApiClient.apiService.getCatFact()
+                binding.tvCatFact.text = "\"${response.fact}\""
+            } catch (e: Exception) {
+                binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+            }
+        }
+
     }
+}
 
 
 
