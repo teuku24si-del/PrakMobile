@@ -11,6 +11,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.has_apps.AuthActivity
+import com.example.has_apps.Home.Pertemuan13.ThirteenthActivity
 import com.example.has_apps.Home.Pertemuan_10.TenthActivity
 import com.example.has_apps.Home.Pertemuan_4.FourthActivity
 import com.example.has_apps.Home.Pertemuan_5.FifthActivity
@@ -78,6 +79,11 @@ class HomeFragment : Fragment() {
 
         binding.btn10.setOnClickListener {
             val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btn13.setOnClickListener {
+            val intent = Intent(requireContext(), ThirteenthActivity::class.java)
             startActivity(intent)
         }
 
