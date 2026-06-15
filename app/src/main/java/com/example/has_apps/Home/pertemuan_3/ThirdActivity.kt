@@ -13,6 +13,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.has_apps.R
 import com.example.has_apps.databinding.ActivityThirdBinding
 import com.example.has_apps.utils.NotificationHelper
+import com.example.has_apps.utils.ReminderHelper
+import java.util.Calendar
 
 class ThirdActivity : AppCompatActivity() {
     private lateinit var binding: ActivityThirdBinding
@@ -43,12 +45,26 @@ class ThirdActivity : AppCompatActivity() {
             val intent = Intent(this, ThirdResultActivity::class.java)
 //            startActivity(intent)
 
-            NotificationHelper.showNotification(
-                this, //Jika panggil di fragment maka requireContext()
-                "Pesanan Anda",
-                "Halo $nomor, Pesanan Anda Sedang Diproses",
-                intent
+//            NotificationHelper.showNotification(
+//                this, //Jika panggil di fragment maka requireContext()
+//                "Pesanan Anda",
+//                "Halo $nomor, Pesanan Anda Sedang Diproses",
+//                intent
+//            )
+
+            val calendar = Calendar.getInstance().apply {
+                add(Calendar.MINUTE, 1) // Tambah 1 menit dari sekarang
+            }
+
+            ReminderHelper.setReminder(
+                context = this, //Jika panggil di fragment maka requireContext()
+                hour = calendar.get(Calendar.HOUR_OF_DAY),
+                minute = calendar.get(Calendar.MINUTE),
+                title = "Reminder 1 Menit",
+                message = "Halo $nomor, reminder ini muncul 1 menit setelah tombol ditekan",
+                targetActivity = ThirdResultActivity::class.java
             )
+            Toast.makeText(this, "Silahkan tunggu 1 Menit untuk menerima Notifikasi...", Toast.LENGTH_SHORT).show()
         }
     }
 }
