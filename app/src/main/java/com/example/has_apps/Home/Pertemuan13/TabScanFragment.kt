@@ -16,6 +16,7 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.has_apps.databinding.FragmentTabScanBinding
+import com.example.has_apps.utils.PermissionHelper
 import com.google.mlkit.vision.barcode.BarcodeScanner
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
@@ -57,19 +58,24 @@ class TabScanFragment : Fragment() {
             .build()
         scanner = BarcodeScanning.getClient(options)
 
-        if (hasCameraPermission()) {
-            startCamera()
+        if (!PermissionHelper.hasPermission(
+                requireActivity(),
+                Manifest.permission.CAMERA)) {
+            PermissionHelper.requestPermission(
+                permissionLauncher,
+                Manifest.permission.CAMERA
+            )
         } else {
-            permissionLauncher.launch(Manifest.permission.CAMERA)
+            startCamera()
         }
     }
 
-    private fun hasCameraPermission(): Boolean {
-        return ContextCompat.checkSelfPermission(
-            requireContext(),
-            Manifest.permission.CAMERA
-        ) == PackageManager.PERMISSION_GRANTED
-    }
+//    private fun hasCameraPermission(): Boolean {
+//        return ContextCompat.checkSelfPermission(
+//            requireContext(),
+//            Manifest.permission.CAMERA
+//        ) == PackageManager.PERMISSION_GRANTED
+//    }
 
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
